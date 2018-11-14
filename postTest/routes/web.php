@@ -22,6 +22,7 @@ Route::post('/posts/update/{id}', 'PostsController@update')->name('posts.update'
 Route::get('/posts/delete/{id}', 'PostsController@delete')->name('posts.delete');
 
 Route::post('upload', 'UploadController@upload');
+Route::get('/photo/delete/{filename}', 'UploadController@deletePhoto')->name('photo.delete');
 
 Route::any('images', function() {
 

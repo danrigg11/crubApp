@@ -63,7 +63,6 @@
         <h2 class="">Photos</h2>
         <hr>
         <h1>File Upload</h1>
-        <img style="height:30px" src="/uploads/Screen Shot 2018-11-14 at 11.55.23.png"/>
         <form action="{{ URL::to('upload') }}" method="post" enctype="multipart/form-data">
           <label>Select image to upload:</label>
           <input style="padding-bottom:5px" type="file" name="file" id="file">
@@ -74,14 +73,13 @@
       </div>
     </div>
     <div class="center">
-      @php
-      foreach (File::allFiles(public_path().'/uploads/') as $file)
-      {
+      @foreach (File::allFiles(public_path().'/uploads/') as $file)
+      <?php
         $filename = $file->getRelativePathName();
         echo "<img style=\"width:300px\" src=\"/uploads/$filename\"/>";
-
-      }
-      @endphp
+        ?>
+        <a href="{{ route('photo/delete/'. $filename) }}" class="label label-danger w-100">Delete</a>
+      @endforeach
     </div>
   </div>
 @endsection

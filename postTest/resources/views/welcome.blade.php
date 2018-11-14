@@ -103,6 +103,7 @@
           <a href="{{ route('posts.delete', $post->id) }}" class="label label-danger" onclick="return confirm('Are you sure to delete?')">Delete</a>
         </div>
       @endforeach
+      <img style="height:30px" src="/uploads/Screen Shot 2018-11-14 at 11.55.23.png"/>
     </div>
   </div>
 </body>

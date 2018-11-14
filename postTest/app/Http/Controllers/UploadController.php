@@ -21,7 +21,7 @@ class UploadController extends Controller {
 	}
 
 	public function deletePhoto($filename){
-		Storage::disk('public')->delete('uploads/',$filename);
+		Storage::disk('public')->delete('uploads/'.$filename);
 
 		return redirect()->route('posts.index');
 	}

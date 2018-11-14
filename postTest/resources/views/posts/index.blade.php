@@ -78,7 +78,7 @@
         $filename = $file->getRelativePathName();
         echo "<img style=\"width:300px\" src=\"/uploads/$filename\"/>";
         ?>
-        <a href="{{ route('photo/delete/'. $filename) }}" class="label label-danger w-100">Delete</a>
+        <a href="/photo/delete/<?php echo $filename ?>" class="label label-danger w-100">Delete</a>
       @endforeach
     </div>
   </div>
